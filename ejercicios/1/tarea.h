@@ -24,8 +24,8 @@ bool is_set_tarea(const struct tarea *t,uint16_t attr);
 const void *curso_tarea_attr_get_data(struct tarea *t, uint16_t attr);
 uint32_t curso_tarea_attr_get_u32(struct tarea *t, uint16_t attr);
 const char *curso_tarea_attr_get_str(struct tarea *t, uint16_t attr);
-void set_tarea_data_len(struct tarea *t,uint16_t attr,uint32_t data);//?¿¿?¿? mas parametros?
-void set_tarea_data(struct tarea *t, uint16_t attr, const void *data,uint32_t data_len);
+void set_tarea_data(struct tarea *t,uint16_t attr,const char *data);//?¿¿?¿? mas parametros?
+void set_tarea_data_len(struct tarea *t, uint16_t attr, const char *data,uint32_t data_len);
 void set_tarea_u32(struct tarea *t, uint16_t attr, uint32_t data);
 void  unset_tarea(struct tarea *t,uint16_t attr);
 int imprimir_tarea_snprintf(char *buf,size_t size,struct tarea *t);

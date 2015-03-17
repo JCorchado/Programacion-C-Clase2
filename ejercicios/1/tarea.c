@@ -3,10 +3,10 @@
 
 struct tarea
 {
-        char  *nombre_tarea;
-        char  *desc_tarea;
+        const char  *nombre_tarea;
+        const char  *desc_tarea;
         uint32_t id;
-        char *usuario;
+        const char *usuario;
         uint32_t prioridad;
 	
 	uint32_t flags;
@@ -67,7 +67,7 @@ const char *curso_tarea_attr_get_str(struct tarea *t, uint16_t attr)
 	return curso_tarea_attr_get_data(t, attr);
 }
 
-void set_tarea_data_len(struct tarea *t,uint16_t attr,const void *data,uint32_t data_len)
+void set_tarea_data_len(struct tarea *t,uint16_t attr,const char *data,uint32_t data_len)
 {
 	if(attr > __TAREA_attr_MAX)
 		return;
@@ -101,7 +101,7 @@ void set_tarea_data_len(struct tarea *t,uint16_t attr,const void *data,uint32_t 
         t->flags |= (1 << attr);
 }
 
-void set_tarea_data(struct tarea *t, uint16_t attr, const void *data)
+void set_tarea_data(struct tarea *t, uint16_t attr, const char *data)
 {
 	set_tarea_data_len(t, attr, data, 0);
 }
